@@ -1,0 +1,4 @@
+{
+	"attributes": ["st", "ht", "dx", "iq"],
+	"classes": ["fighter", "wizard", "rogue", "elf", "dwarf"]
+}
