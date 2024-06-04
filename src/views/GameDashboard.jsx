@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams, useSearchParams, Outlet } from 'react-router-dom'
+import { Link, useParams, useSearchParams, Outlet, useActionData } from 'react-router-dom'
 import BasePage from './BasePage'
 import { ProvideLevelupContext } from '../contexts/LevelupContext'
-import { GameDescription, GameCheatLevel } from './game'
+import { GameDescription, GameCheatLevel } from '@/fantasy/views'
 
 
 
@@ -10,6 +10,9 @@ export default function GameDashboard()
 {
 	const [ level, setLevel ] = useState(1)
 	const ctx_value = { level, setLevel }
+
+	const actionData = useActionData()
+	console.log('something in ACTION data ', actionData )
 
 	return <BasePage>
 
@@ -33,4 +36,12 @@ export default function GameDashboard()
 		<Outlet />
 
 	</BasePage>
+}
+
+export async function action({ request, params})
+{
+	const fdata = await request.formData()
+	const data = Object.fromEntries( fdata )
+	console.log('from game dashboard ACTION ', data )
+	return data
 }

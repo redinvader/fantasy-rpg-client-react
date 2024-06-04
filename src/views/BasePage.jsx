@@ -1,9 +1,12 @@
 import PublicMainNavigation from './PublicMainNavigation'
+import { RouterLoadingCompo } from '@/router'
 
 export default function BasePage({ children })
 {
 	return <>
-		<PublicMainNavigation />
-		{children}
+		<RouterLoadingCompo>
+			<PublicMainNavigation />
+			{children}
+		</RouterLoadingCompo>
 	</>
 }

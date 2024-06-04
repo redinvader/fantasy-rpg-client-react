@@ -1,5 +1,8 @@
 import { createContext, useContext } from 'react'
 
+/*
+	isso aqui é só pose - é um Context super neutro na verdade
+*/
 
 export const LevelupContext = createContext()
 

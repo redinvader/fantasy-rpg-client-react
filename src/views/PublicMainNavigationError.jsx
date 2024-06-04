@@ -5,9 +5,13 @@ export default function PublicMainNavigationError(){
 	console.error( error )
 
 	return (
-		<div id='error-page' className='text-bg-danger w-100 p-2' style='height:3rem'>
+		<div 
+			id='error-page' 
+			className='text-bg-danger w-100 p-2' 
+			style={ { minHeight: '3rem'} }
+		>
 			<p>Deu ruim</p>
-			<p> { error.statusText || error.message }</p>
+			<p className='text-center fs-3'> { error.statusText || error.message || error.data }</p>
 		</div>
 	)
 }
